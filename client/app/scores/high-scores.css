@@ -1,0 +1,10 @@
+.tableHighScores{
+       border: 1px solid black;
+       border-collapse: collapse;
+    }
+    #row1{
+      font-weight: bold;
+    }
+    td{
+      width:150px;
+    }

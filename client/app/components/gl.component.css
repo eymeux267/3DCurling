@@ -1,0 +1,124 @@
+ #hudDiv{
+            position: absolute;
+        }
+        h2{
+            color: yellow;
+            cursor: default;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+             user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+        }
+        .playerName{
+            position: absolute;
+            top: 0px;
+            left: 3%;
+        }
+         .CPUName{
+            position: absolute;
+            top: 0px;
+            right: 3%;
+        }
+        .scorePlayer{
+            position: absolute;
+            top: 0px;
+            left: 45%;
+            font-size: 300%;
+        }
+        .tiret{
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            font-size: 300%;
+        }
+        .scoreCPU{
+            position: absolute;
+            top: 0px;
+            left: 55%;
+            font-size: 300%;
+        }
+        .round{
+            position: absolute;
+            top: 60px;
+            left: 47%;
+        }
+        .roundNbr{
+            position: absolute;
+            top: 60px;
+            right: 45%;
+        }
+        .stonesLeft{
+            position: absolute;
+            top: 200px;
+            left: 3%;
+        }
+        .stonesLeftCPU{
+            position: absolute;
+            top: 200px;
+            right: 3%;
+        }
+        .nbrStonesLeft{
+            position: absolute;
+            top: 270px;
+            left: 3%;
+        }
+        .nbrStonesLeftCPU{
+            position: absolute;
+            top: 270px;
+            right: 3%;
+        }
+
+        .spinType{
+            position: absolute;
+            top: 400px;
+            left: 3%;
+        }
+
+        .progress-bar{
+            position: absolute;
+            width: 506px;
+            height: 26px;
+            background-color: #bbb;
+            border-radius: 13px;
+            margin: 50px auto;
+            left:28%;
+            top: 8%;
+        }
+
+        .progress{
+            position: absolute;
+            width: 0px;
+            height: 20px;
+            border-radius:10px;
+            background-color: red;
+        }
+
+        .greenProgressBar{
+            position: absolute;
+           background-color: green;
+        }
+
+        #mouseMovementDetector{
+            position: absolute;
+            bottom: 0%;
+            width: 100%;
+            height:100%;
+            cursor: none;
+        }
+
+        #mouseMovementDetectorTable{
+            border: transparent;
+            border-collapse: collapse;
+            width: 100%;
+            height:100%;
+        }
+
+        .tdMovementDetector{
+            border: transparent;
+            height:100%;
+            width: 1.639344262%;
+            border-collapse: collapse;
+        }

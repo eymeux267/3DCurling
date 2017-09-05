@@ -1,0 +1,76 @@
+        <div>
+                <button md-button color="primary" (click)="topView()">
+                Top View
+                </button>
+
+                <button md-button color="primary" (click)="diveView()">
+                Dive View
+                </button>
+
+                <button md-button color="primary" (click)="changeSpin()">
+                Change Spin
+                </button>
+
+                <button md-button color="primary" (click)="confettiAnimation()" (click)="stoneJumpAnimation('RED')">
+                End Game Winner Red Player 
+                </button>  
+
+                <button md-button color="primary" (click)="confettiAnimation()" (click)="stoneJumpAnimation('BLUE')">
+                End Game Winner Blue Player
+                </button> 
+                
+            <md-card>
+                Shortcuts <br/>
+                Change spin: s <br/>
+                Change view: c <br/>
+                Next shot: spacebar
+            </md-card>  
+
+            <div *ngIf = "endgameAnimationHasStarted === true"> <h1>CONGRATULATIONS, {{winnerColor}} PLAYER WON THE GAME </h1> </div>
+
+        </div>
+
+        <div *ngIf = "gameEnded === true">
+            <high-scores></high-scores>
+            <button md-button color="primary" (click)="newGame()">
+                Restart game
+            </button>
+        </div>
+        <div *ngIf = "gameEnded === false">
+            <div (mousedown)="mouseDownEventHandler($event)" (mouseup)="mouseReleasedEventHandler($event)" (mouseover)="broomEventHandler($event)" >
+            <modifier [container]="container"
+                    [webgltext]="webgltext"></modifier>
+            <div id="hudDiv">
+                <h2 class="playerName" [innerHtml]="playerName"> </h2> 
+                <h2 class="CPUName" *ngIf="difficulty === false"> EasyCPU </h2>
+                <h2 class="CPUNAME" *ngIf="difficulty === true"> HardCPU </h2>
+                <h2 class="scorePlayer" [innerHtml]="scorePlayer"></h2>
+                <h2 class="tiret"> - </h2>
+                <h2 class="scoreCPU" [innerHtml]="scoreCPU"></h2>
+                <h2 class="round"> Round: </h2>
+                <h2 class="roundNbr" [innerHtml]="round"> </h2>
+                <h2 class="stonesLeft">Stones left:</h2>
+                <h2 class="stonesLeftCPU">Stones left:</h2>
+                <h2 class="nbrStonesLeft" [innerHtml]="stonesLeftPlayer"> </h2>
+                <h2 class="nbrStonesLeftCPU" [innerHtml]="stonesLeftCPU"> </h2>
+                <h2 class="spinType" *ngIf="stoneSpin === 'CLOCKWISE'"> Spin: Clockwise </h2>
+                <h2 class="spinType" *ngIf="stoneSpin === 'COUNTERCLOCKWISE'"> Spin: Counter-Clockwise </h2>
+
+            <div class="progress-bar">
+                <div class="progress" id="progress" #progress [ngClass]="{'greenProgressBar': progressBarIsGreen}"> </div>
+            </div>
+
+
+
+            <div id="mouseMovementDetector">
+                <table id= "mouseMovementDetectorTable">
+                    <td class="tdMovementDetector" *ngFor="let i of angleDetectionArray" 
+                            (mouseover)="mouseOverEventHandler(i)" (mouseleave)="mouseLeaveEventHandler(i)"> </td>
+                
+
+                </table>
+            </div>
+            <div #container> </div>
+            </div>
+            </div>
+    </div> 

@@ -1,0 +1,37 @@
+<h2> Highscores </h2>
+    <div *ngIf="!highScoreHasBeenShown">
+    <button md-button color="primary" (click)="setDifficultyToNormal()">
+      Normal Difficulty
+    </button>
+    <button md-button color="primary" (click)="setDifficultyToHard()">
+      Hard Diffculty
+    </button>
+    </div>
+
+    <div *ngIf="difficulty === 'normal'">
+      <h3>Normal</h3>
+      <table class="tableHighScores">
+        <tr id="row1">
+          <td>Name:</td>
+          <td>Points</td>
+        </tr>
+        <tr *ngFor="let leScore of scoresTable">
+            <td> {{leScore.playerName}}</td>
+            <td> {{leScore.points}} - {{leScore.pointsOpponent}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div *ngIf="difficulty === 'hard'">
+      <h3>Difficile</h3>
+      <table class="tableHighScores">
+        <tr id="row1">
+          <td>Name:</td>
+          <td>Points</td>
+        </tr>
+        <tr *ngFor="let leScore of scoresTable">
+            <td> {{leScore.playerName}}</td>
+            <td> {{leScore.points}} - {{leScore.pointsOpponent}}</td>
+        </tr>
+      </table>
+    </div>
